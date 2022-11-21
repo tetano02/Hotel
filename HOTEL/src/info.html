@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Info</title>
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<script>
+		function visualizzaMessaggio(){
+				var indirizzoemail=document.getElementById("email").value;
+				var lunghezzaemail=indirizzoemail.lenght;
+				var primocontrollo=indirizzoemail.indexOf("@");
+				var secondocontrollo=indirizzoemail.indexOf("@",primocontrollo+1);
+				if(lunghezzaemail<=6 || primocontrollo<0 || secondocontrollo>0){
+					alert("Indirizzo email non valido");
+					return;
+					//la lunghezza non influisce,perchè?
+			}
+		
+			if(document.getElementById("privacy").checked==true)
+				document.getElementById("privacy").value="PRIVACY ACCETTATA";
+			else
+				document.getElementById("privacy").value="PRIVACY NON ACCETTATA";
+			
+			if(document.getElementById("radio").checked==true)
+				document.getElementById("radio").value="telefono";
+			else
+				document.getElementById("radio").value="email";
+			var msg;
+			msg="NOME: "+document.getElementById("nome").value+"\n";
+			msg+="COGNOME: "+document.getElementById("cognome").value+"\n";
+			msg+="EMAIL: "+document.getElementById("email").value+"\n";
+			msg+="NUMERO: "+document.getElementById("numero").value+"\n";
+			msg+="MESSAGGIO: "+document.getElementById("message").value+"\n";
+			msg+=document.getElementById("privacy").value+"\n";
+			msg+="Le verrà comunicata una risposta via "+document.getElementById("radio").value+" in "+document.getElementById("preferenze").value+" nelle prossime settimane \n";
+			document.getElementById("message").innerHTML=msg;
+			alert(msg);
+		}
+			
+			
+	</script>
+</head>
+
+<body>
+	<h1>HOTEL PENNSYLVANIA-INFO GENERALI</h1>
+	<img src="../img/tel.png" alt="info" class="immaginesottopaginfo">
+	<table>
+	<tr>
+		<th colspan="2">CONTATTI</th>
+	</tr>
+	<tr>
+		<td>Numero di telefono</td>
+		<td>333*******</td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td>hotelpennsylvania@gmail.com</td>
+	</tr>
+	<tr>
+		<td>Fax</td>
+		<td>012**********</td>
+	</tr>
+	</table>
+	<br><br>
+	<div class="riquadro" action="/action_page.php">
+		<p class="caratteretitolo">CONTATTACI</p>
+		<label for="nome">Nome</label><br>
+		<input type="text" id="nome" placeholder="Nome" ><br>
+		<label for="nome">Cognome</label><br>
+		<input type="text" id="cognome" placeholder="Cognome"><br>
+		<label for="nome">Email</label><br>
+		<input type="email" id="email" placeholder="Email address"><br>
+		<label for="nome">Numero:</label><br>
+		<input type="text" id="numero" placeholder="Numero di telefono"><br>
+		<label for="nome">Messaggio:</label><br>
+		<input name="nome" id="message" class="textarea" placeholder="Scrivi un messaggio"><br>
+		<input type="checkbox" id="privacy">
+		<label for="privacy">Accetto condizioni di privacy</label><br><br>
+		<label for="preferenze">Preferenze di contatto:</label>
+		<select id="preferenze">
+			<option value="mattina">Mattina</option>
+			<option value="pomeriggio">Pomeriggio</option>
+			<option value="sera">Sera</option>
+		</select><br><br>
+		<p>Scegliere la preferenza:</p>
+		<input type="radio" id="radio" name="pref" checked="checked">
+		<label for="tel">Telefono</label><br>
+		<input type="radio" id="radio" name="pref">
+		<label for="email">Email</label><br>
+		<input type="button" value="Invia" onclick="visualizzaMessaggio();"><br><br>	
+	</div>
+	
+	<div class="dropdownsottopag">
+		<button class="dropbtn">Menu</button>
+		<div class="dropdown-content">
+		
+		<a class="menusottopag" href="../index.html">
+			<p>HOME</p>
+		</a>
+			
+		<a	class="menusottopag" href="camere.html">
+			<p>Camere</p>
+		</a>
+		
+		<a	class="menusottopag" href="sala_da_pranzo.html">
+			<p>Sala da pranzo</p>
+		</a>
+	
+		<a	class="menusottopag" href="listino_prezzi.html">
+			<p>Listino prezzi</p>
+		</a>
+			
+		<a class="menusottopag" href="prenotazione.html">
+			<p>Prenota</p>
+		</a>
+	</div>
+</body>
+
+</html>

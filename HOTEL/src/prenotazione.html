@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PRENOTAZIONE</title>
+	<link rel="stylesheet" type="text/css" href="../style/mystyle.css">
+	<script>
+	function Preventivo(){
+		//if(document.getElementById("protezione").checked==true)
+				//document.getElementById("protezione").value="Prenotazione protetta da assicurazione";
+			//else
+				//document.getElementById("protezione").value="Prenotazione non protetta da assicurazione";
+		
+		//if(document.getElementById("radio").checked==true)
+				//document.getElementById("radio").value="PRIVACY ACCETTATA";
+			//else
+				//document.getElementById("radio").value="PRIVACY NON ACCETTATA";
+		
+		if(document.getElementById("camera").value=="Camera singola")
+				document.getElementById("prezzo").value="90€";
+		else if(document.getElementById("camera").value=="Camera matrimoniale")
+				document.getElementById("prezzo").value="120€";
+		else if(document.getElementById("camera").value=="Suite singola")
+				document.getElementById("prezzo").value="150€";
+			else
+				document.getElementById("prezzo").value="180€";
+		
+		var dataInizio=new Date(document.getElementById("datainizio").value);
+		var dataFine=new Date(document.getElementById("datafine").value);
+		var differenzadata=(dataFine-dataInizio)/86400000;	
+		
+		var prezzo
+			prezzo=parseFloat(document.getElementById("numad").value*50);
+			prezzo+=parseFloat(document.getElementById("numbam").value*25);
+			prezzo+=parseFloat(document.getElementById("prezzo").value);
+
+		var prezzotot=parseFloat(prezzo*differenzadata);
+		var msg="Il prezzo del preventivo è "+prezzotot+"€";
+
+		if(dataInizio>=dataFine)
+			msg="preventivo non disponibile,inserire un periodo di soggiorno valido";
+		
+		if(document.getElementById("numad").value<0 || document.getElementById("numbam").value<0)
+			msg="preventivo non disponibile,inserire un numero di persone valido";
+			
+		if((document.getElementById("numad").value<0 || document.getElementById("numbam").value<0)&& dataInizio>=dataFine)
+			msg="preventivo non disponibile,inserire un periodo di soggiorno e un numero di persone validi";
+			
+		
+			//msg="PREVENTIVO <br>\n";
+			//msg+="DATA DI INZIO DELLA VACANZA: "+document.getElementById("datainizio").value+"<br>\n";
+			//msg+="DATA DI FINE DELLA VACANZA: "+document.getElementById("datafine").value+"<br>\n";
+			//msg+="Vacanza prenotata per "+document.getElementById("numad").value+" adulti e "+document.getElementById("numbam").value+" bambini <br>\n";
+			//msg+="La camera selezionata è la "+document.getElementById("camera").value+"<br>\n";
+			//msg+=document.getElementById("protezione").value+"<br>\n";
+			//msg+=document.getElementById("radio").value+"<br>\n";
+			//Informazioni che non ho capito se da inserire o no
+			document.getElementById("output").innerHTML=msg;
+			document.getElementById("prezzo").value="Prenota";
+			document.getElementById("output").style.border="2px solid black";
+		}
+	</script>
+	
+</head>
+
+<body>
+	
+	<h1>HOTEL PENNSYLVANIA-PRENOTAZIONE</h1>
+	<img src="../img/agenda.png" alt="prenota" class="immaginesottoprenotazione">
+	<div class="prenota" action="/action_page.php">
+		<p class="caratteretitolo">PRENOTA</p>
+		<label for="datainizio">Data inizio della vacanza</label><br>
+		<input type="date" id="datainizio"><br>
+		<label for="datafine">Data fine della vacanza</label><br>
+		<input type="date" id="datafine"><br>
+		<label for="numeroadulti">Numero di adulti:</label><br>
+		<input type="text" id="numad" placeholder="Numero di adulti"><br>
+		<label for="numerobimbi">Numero di Numero bambini fino a 5 anni:</label><br>
+		<input type="text" id="numbam" placeholder="Numero di bambini"><br>
+		<label for="camere">Scegliere la camera che si vuol prenotare:</label>
+		<select id="camera">
+			<option value="Camera singola">Camera singola</option>
+			<option value="Camera matrimoniale">Camera matrimoniale</option>
+			<option value="Suite singola">Suite singola</option>
+			<option value="Suite Matrimoniale">Suite Matrimoniale</option>
+		</select><br><br>
+		<input type="checkbox" id="protezione">
+		<label for="protezione">Prenotazione protetta da assicurazione</label><br>
+		<p>Accetto condizioni di privacy:</p>
+		<input type="radio" id="radio" name="privacy" checked="checked">
+		<label for="si">SI</label><br>
+		<input type="radio" id="radio" name="privacy">
+		<label for="no">NO</label><br>
+		<input type="button" id="prezzo" value="Prenota" onclick="Preventivo();"><br><br>
+		<div id="output" class="output"></div>	
+	</div>
+	
+	<div class="dropdownsottopag">
+		<button class="dropbtn">Menu</button>
+		<div class="dropdown-content">
+		
+		<a class="menusottopag" href="../index.html">
+			<p>HOME</p>
+		</a>
+			
+		<a class="menusottopag" href="camere.html">
+			<p>Camere</p>
+		</a>
+		
+		<a	class="menusottopag" href="sala_da_pranzo.html">
+			<p>Sala da pranzo</p>
+		</a>
+	
+		<a	class="menusottopag" href="listino_prezzi.html">
+			<p>Listino prezzi</p>
+		</a>
+	
+		<a	class="menusottopag" href="info.html">
+			<p>Info</p>
+		</a>
+	</div>
+	
+	
+	<!-- Gli a capo "\n" non funzionano correttamente,perchè?-->
+</body>
+
+</html>

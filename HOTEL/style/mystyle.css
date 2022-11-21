@@ -1,0 +1,161 @@
+body{
+	background-color:#87CEFA;
+}
+
+h1{	
+	font-family:Arial;
+}
+.dropbtn {
+	font-family:Arial;
+	background-color: #1E90FF;
+	color: white;
+	padding: 13px;
+	font-size: 16px;
+	border: none;
+}
+
+.dropdown {
+	position: fixed;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+  
+}
+.dropdown-content a {
+	font-family:Arial;
+	color: black;
+	padding: 1px 90px;
+	display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #1E90FF;}
+
+
+
+.immaginecentrale{
+	width:65%;
+}
+
+.immagine{
+	display:block;
+	background-color:white; 
+	border: solid 1px #000;
+	width: 100%;
+}
+
+.caratteristicaimg{
+  height: auto;
+  width: 40%;
+}
+
+.carattere{
+		padding: 10px;
+		font-family:Arial;
+		float:right;
+}
+
+.immaginesottopag{
+	float:left;
+	height: auto;
+	width: 47%;
+}
+
+table {
+  border-collapse: collapse;
+  background-color:LightSeaGreen;
+  font-family:Arial;
+}
+
+table, td, th {
+  border: 1px solid black;
+  width:50%;
+  height:25px;
+}
+
+tr:hover{background-color: #ddd; color:grey;}
+td:hover{background-color: #ddd;}
+/*non ho capito se il colore deve essere uguale o diverso alla cella nella riga,se devono essere diversi mettere
+ *th al posto di tr e aggiungere tr:hover{background-color:#000066} */
+
+.sala{
+	text-align:center;
+}
+
+.immaginesottopaginfo{
+	float:left;
+	height: auto;
+	width: 35%;
+}
+
+.riquadro{
+	padding:21px;
+	border: 1px solid black;
+	float:left;
+	background-color:white;
+	font-family:Arial;
+}
+
+.textarea{
+	width:619px; 
+}
+
+.caratteretitolo{
+	font-weight:bold;
+	font-family:Arial;
+}
+
+.sottotitolo{
+	font-family:Arial;
+	font-size: 20;
+	font-style:italic;
+}
+
+.immaginesottoprenotazione{
+	float:left;
+	height: auto;
+	width: 25%;
+}
+
+.prenota{
+	padding:21px;
+	border: 2px solid black;
+	float:left;
+	background-color:#e6e6ff;
+	font-family:Arial;
+}
+
+.output{
+	width:466px;
+	float:left;
+	background-color:#e6e6ff;
+	margin:auto;
+}
+
+.menusottopag{
+	display:block;
+	background-color:white; 
+	width: 50%;
+	font-family:Arial;
+}
+
+.dropdownsottopag{
+	position: relative;
+	display: inline-block;
+	width:40px;
+	height:30px;
+	float:left;
+	font-family:Arial;
+}
+.dropdownsottopag:hover .dropdown-content {display: block;}
+
+.dropdownsottopag:hover .dropbtn {background-color: #1E90FF;}
+
+
